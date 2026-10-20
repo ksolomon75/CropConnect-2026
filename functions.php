@@ -1,6 +1,6 @@
 <?php
 /**
- * Functions file for the BasicWP theme.
+ * Functions file for the CropConnect theme.
  *
  * This file initializes the theme by including necessary dependencies
  * and loading additional function files.
@@ -16,21 +16,25 @@ foreach ( glob( __DIR__ . '/lib/*.php' ) as $filename ) {
 	include_once $filename;
 }
 
-/** Registers custom ACF (Advanced Custom Fields) blocks for use in the WordPress theme.
+/**
+ * Registers custom ACF (Advanced Custom Fields) blocks.
  *
- * This function is intended to define and register custom Gutenberg blocks
- * using ACF, allowing for dynamic and reusable content blocks within the theme.
+ * This theme's content is built from classic page templates rather than
+ * Gutenberg blocks, but any ACF block dropped into `views/blocks/` is still
+ * registered so editors are not blocked from using them.
  *
  * @return void
  */
 function regACFBlocks() {
-	define( 'BLOCKS_DIR', get_stylesheet_directory() . '/views/blocks' );
+	$blocks_dir = get_stylesheet_directory() . '/views/blocks';
 
-	if ( is_dir( BLOCKS_DIR ) ) {
-		foreach ( scandir( BLOCKS_DIR ) as $folder ) {
-			if ( ( '.' !== $folder && '..' !== $folder && 'boilerplate' !== $folder ) && is_dir( BLOCKS_DIR . '/' . $folder ) ) {
-				register_block_type( BLOCKS_DIR . '/' . $folder );
-			}
+	if ( ! is_dir( $blocks_dir ) ) {
+		return;
+	}
+
+	foreach ( scandir( $blocks_dir ) as $folder ) {
+		if ( '.' !== $folder && '..' !== $folder && 'boilerplate' !== $folder && is_dir( $blocks_dir . '/' . $folder ) ) {
+			register_block_type( $blocks_dir . '/' . $folder );
 		}
 	}
 }

@@ -1,0 +1,27 @@
+.container,.hero__container,.hero__container--new,.sponsor__banner__container{max-width:1180px;margin-left:auto;margin-right:auto;padding:0 20px}.container:after,.hero__container--new:after,.hero__container:after,.sponsor__banner__container:after{content:" ";display:block;clear:both}.page-header .container,.page-header .hero__container,.page-header .hero__container--new,.page-header .sponsor__banner__container{z-index:1;position:relative}.speaker-section .container,.speaker-section .hero__container,.speaker-section .hero__container--new,.speaker-section .sponsor__banner__container{background-image:url(../../static/img/speakers/keynote-symbol.png);background-position:0;background-repeat:no-repeat}.speaker-section:nth-child(odd) .container,.speaker-section:nth-child(odd) .hero__container,.speaker-section:nth-child(odd) .hero__container--new,.speaker-section:nth-child(odd) .sponsor__banner__container{background-position:100%}.content .speaker-section--banquet .container,.content .speaker-section--banquet .hero__container,.content .speaker-section--banquet .hero__container--new,.content .speaker-section--banquet .sponsor__banner__container{background-image:url(../../static/img/speakers/top-logo-bg.png)}
+
+.container--message {
+	padding-top: 60px;
+}
+.container--register h2 {
+	color: #2a9740;
+}
+.container--register .home__speakers__item {
+	width: 20%;
+	display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    
+}
+.container--register .home__speakers {
+	justify-content: center;
+}
+@media (max-width:1000px){
+	.container--register .home__speakers__item {
+		width: 33.33%;
+	}}
+@media (max-width:500px){
+	.container--register .home__speakers__item {
+		width: 50%;
+	}}

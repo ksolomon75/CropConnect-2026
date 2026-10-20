@@ -1,9 +1,0 @@
-/* Theme base styles */
-
-@import "./global.css";
-@import "./colors.css";
-@import "./prose.css";
-@import "./typography.css";
-@import "./skip-link.css";
-@import './misc.css';
-@import "./forms.css";

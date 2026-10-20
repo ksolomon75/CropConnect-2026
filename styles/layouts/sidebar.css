@@ -1,0 +1,7 @@
+.sidebar{width:31.0344827586%;float:right;margin-right:0}.sidebar h3{font-weight:700;text-transform:uppercase}.sidebar .widget{margin-bottom:4rem}@media (max-width:768px){.sidebar{width:100%;float:right;margin-right:0;margin-top:3rem;padding:20px 20px 0;border:1px solid #d8d8d8;box-sizing:border-box}}.recent-post{margin-bottom:1.5rem}.recent-post__info p{margin:0}.recent-post__meta{font-size:.75rem;color:#7d7d7d}
+.recent-post__image {
+	margin-bottom: 80px;
+}
+.recent-post__image--adjusted {
+	margin-top: 50px;
+}

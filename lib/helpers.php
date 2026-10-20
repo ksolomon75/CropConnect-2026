@@ -51,17 +51,23 @@ function blockWrapperAttributes( $classes, $is_preview ) {
 	);
 }
 
-// Add Global Fields options page.
+/**
+ * Add the theme's ACF options page.
+ *
+ * The slug is part of the public admin URL that editors already bookmark, so it
+ * is kept identical to the previous theme's.
+ */
 if ( function_exists( 'acf_add_options_page' ) ) {
 	add_action(
 		'init',
 		function () {
 			acf_add_options_page(
 				array(
-					'page_title' => 'Global Fields',
-					'menu_title' => 'Global Fields',
-					'menu_slug'  => 'global-fields',
-					'icon_url'   => 'dashicons-admin-site',
+					'page_title' => 'Theme General Settings',
+					'menu_title' => 'Theme Settings',
+					'menu_slug'  => 'theme-general-settings',
+					'capability' => 'edit_posts',
+					'redirect'   => false,
 				)
 			);
 		}
@@ -87,7 +93,7 @@ function customMenuOrder( $menu_ord ) {
 
 	return array(
 		'index.php', // Dashboard.
-		'global-fields', // Global Theme Fields.
+		'theme-general-settings', // Theme Settings.
 		'edit.php?post_type=acf-field-group', // ACF Field Groups.
 		'separator1', // First separator.
 		'edit.php', // Posts.

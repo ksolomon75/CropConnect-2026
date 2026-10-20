@@ -38,91 +38,6 @@ register_nav_menus(
 );
 
 /**
- * Widget Areas
- *
- * Set up sidebar/widget areas for the theme.
- *
- * @return void
- */
-add_action(
-    'widgets_init',
-    function () {
-        $config = array(
-            'before_widget' => '<div class="widget %1$s %2$s">',
-            'after_widget'  => '</div>',
-            'before_title'  => '<h2>',
-            'after_title'   => '</h2>',
-        );
-
-        $cfg_foot = array(
-            'before_widget' => '<div class="widget %1$s %2$s">',
-            'after_widget'  => '</div>',
-            'before_title'  => '<h4>',
-            'after_title'   => '</h4>',
-        );
-
-        register_sidebar(
-            array(
-                'name' => 'Primary Sidebar',
-                'id'   => 'sidebar-primary',
-            ) + $config
-        );
-
-        register_sidebar(
-            array(
-                'name' => 'Page Sidebar',
-                'id'   => 'sidebar-page',
-            ) + $config
-        );
-
-        register_sidebar(
-            array(
-                'name' => 'Footer Area 1',
-                'id'   => 'footer-1',
-            ) + $cfg_foot
-        );
-
-        register_sidebar(
-            array(
-                'name' => 'Footer Area 2',
-                'id'   => 'footer-2',
-            ) + $cfg_foot
-        );
-
-        register_sidebar(
-            array(
-                'name' => 'Footer Area 3',
-                'id'   => 'footer-3',
-            ) + $cfg_foot
-        );
-    }
-);
-
-/**
- * Basic SEO
- *
- * {Site URL}: {Title}
- */
-add_filter(
-    'wp_title',
-    function ( $title ) {
-        $site_name = get_bloginfo( 'name' );
-
-        return "{$site_name}: {$title}";
-    }
-);
-
-/**
- * Excerpt
- */
-add_filter(
-    'excerpt_more',
-    function () {
-        return '&hellip;';
-    }
-);
-
-/**
  * Whether the page hero should hold the main h1 of the page.
  */
 add_filter(
@@ -138,46 +53,12 @@ add_filter(
 );
 
 /**
- * Remove unused or replaced core blocks
- *
- * @return array List of allowed block types
- */
-add_filter(
-    'allowed_block_types_all',
-    function () {
-        // get all the registered blocks
-        $blocks = \WP_Block_Type_Registry::get_instance()->get_all_registered();
-
-        // then disable some of them
-        unset( $blocks['core/media-text'] );
-        unset( $blocks['core/calendar'] );
-        unset( $blocks['core/buttons'] );
-        unset( $blocks['core/search'] );
-
-        // return the new list of allowed blocks
-        return array_keys( $blocks );
-    }
-);
-
-/**
  * WP Cleanup
  */
 function init() {
-    remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-    remove_action( 'wp_print_styles', 'print_emoji_styles' );
-    remove_action( 'admin_print_styles', 'print_emoji_styles' );
-    remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-    remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
-    remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
-    remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
-    wp_dequeue_style( 'wp-block-library' ); // Core block styles.
-    wp_dequeue_style( 'wp-block-library-theme' ); // Block theme styles.
-    wp_dequeue_style( 'global-styles' ); // Global styles.
-    wp_dequeue_style( 'core-block-supports' ); // Core block supports.
-    wp_dequeue_style( 'core-block-styles' ); // Core block styles.
-    remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles', 1 );
-    remove_action( 'wp_enqueue_scripts', 'wp_enqueue_classic_theme_styles', 1 );
-    remove_action( 'wp_head', 'wp_print_head_scripts', 9 );
+    // NOTE: Emoji scripts/styles and the core block stylesheets are
+    // intentionally NOT removed. The previous theme shipped them, and page
+    // content (Block widgets, columns, images) depends on them rendering.
     remove_action( 'wp_head', 'wp_generator' ); // WordPress version.
     remove_action( 'wp_head', 'rsd_link' ); // RSD link.
     remove_action( 'wp_head', 'wlwmanifest_link' ); // Windows Live Writer.
@@ -186,8 +67,8 @@ function init() {
     remove_action( 'wp_head', 'wp_oembed_add_discovery_links' ); // oEmbed discovery links.
     remove_action( 'wp_head', 'rel_canonical' ); // Canonical URL.
     remove_action( 'wp_head', 'wp_resource_hints', 2 ); // DNS Prefetch.
-    add_filter( 'wp_img_tag_add_width_and_height_attr', '__return_false' ); // Disable intrinsic image size.
-    add_filter( 'wp_img_tag_add_auto_sizes', '__return_false' ); // Disable auto sizes.
+    // NOTE: image auto-sizes are left enabled; disabling them rewrites the
+    // `sizes` attribute on content images and changes the rendered markup.
     add_filter( 'xmlrpc_enabled', '__return_false' );
 
     // Add theme support features
@@ -200,14 +81,14 @@ function init() {
             'comment-form',
             'comment-list',
             'gallery',
-            'global-search-form',
-            'script',
-            'style',
+            'search-form',
         )
     );
     add_theme_support( 'align-wide' );
     add_theme_support( 'editor-styles' );
-    add_theme_support( 'responsive-embeds' );
+    // NOTE: 'responsive-embeds' is intentionally NOT enabled. The previous theme
+    // did not enable it, and enabling it adds a `wp-embed-responsive` body class
+    // plus an oEmbed JS filter, both of which change the rendered markup.
     add_theme_support( 'customize-selective-refresh-widgets' );
 }
 

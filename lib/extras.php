@@ -50,17 +50,6 @@ function hasSidebar() {
 	return apply_filters( 'hasSidebar', true );
 }
 
-// Add extra body classes here.
-add_filter(
-	'body_class',
-	function ( $classes ) {
-		if ( hasSidebar() ) {
-			$classes = array_merge( $classes, array( 'has-sidebar' ) );
-		}
-
-		return $classes;
-	}
-);
 
 /**
  * Checks if the page should render a page header.

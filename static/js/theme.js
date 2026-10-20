@@ -1,12 +1,10 @@
 /**
  * Theme JS
+ *
+ * Front-end entry point. Loaded via wp_enqueue_script_module() so the
+ * Slideout library (enqueued as a classic script in the document head) is
+ * already on the page by the time this module executes.
  */
-
-import { registerButtonComponent } from './components/button.js';
-import { registerBackToTopButton } from './components/backToTop.js';
-import GetHeaderHeight from './modules/GetHeaderHeight.js';
-import tagExternalLinks from './modules/TagExternalLinks.js';
-import Navigation from './modules/Navigation.js';
 
 // Add passive event listeners
 ! function (e) {
@@ -48,29 +46,73 @@ import Navigation from './modules/Navigation.js';
 });
 
 /**
+ * Mobile navigation driven by the Slideout library.
+ *
+ * The previous theme used jQuery for the submenu hover and Slideout for the
+ * off-canvas panel; both behaviours are preserved here without jQuery.
+ */
+function initMobileNav() {
+  const menu = document.getElementById('js-menu');
+  const panel = document.getElementById('js-main');
+
+  if (!menu || !panel || typeof window.Slideout !== 'function') {
+    return;
+  }
+
+  const slideout = new window.Slideout({
+    panel: panel,
+    menu: menu,
+    padding: 266,
+    tolerance: 70,
+  });
+
+  // Toggle button.
+  const toggleButton = document.querySelector('.toggle-button');
+  if (toggleButton) {
+    toggleButton.addEventListener('click', function () {
+      slideout.toggle();
+    });
+  }
+
+  // Close button inside the panel.
+  const closeButton = document.querySelector('.nav-mobile__close');
+  if (closeButton) {
+    closeButton.addEventListener('click', function () {
+      slideout.toggle();
+    });
+  }
+
+  // Click on the visible panel area closes the menu.
+  const openPanel = document.querySelector('.slideout-open #js-main');
+  if (openPanel) {
+    openPanel.addEventListener('click', function () {
+      slideout.toggle();
+    });
+  }
+
+  // Desktop submenu hover (replaces the old jQuery .hover() binding).
+  document.querySelectorAll('.main-menu--nav-main .main-menu__item--parent').forEach(function (item) {
+    item.addEventListener('mouseenter', function () {
+      item.classList.add('main-menu__item--parent--open');
+      const submenu = item.querySelector('.main-menu__sub-menu');
+      if (submenu) {
+        submenu.classList.add('main-menu__sub-menu--open');
+      }
+    });
+
+    item.addEventListener('mouseleave', function () {
+      item.classList.remove('main-menu__item--parent--open');
+      const submenu = item.querySelector('.main-menu__sub-menu');
+      if (submenu) {
+        submenu.classList.remove('main-menu__sub-menu--open');
+      }
+    });
+  });
+}
+
+/**
  * Application entrypoint
  */
 document.addEventListener('DOMContentLoaded', () => {
-    // Tag external links
-    tagExternalLinks();
-
-    // Register button component
-    registerButtonComponent();
-    registerBackToTopButton();
-
-    // Initialize Navigation
-    const navigation = new Navigation('navMainToggle', '.menu-vdi__toggle');
-
-    // Initialize Navigation
-    navigation.desktopMenuDropdowns();
-    navigation.mobileMenuToggle();
-
-    // Initialize Header Height
-    GetHeaderHeight();
-
-    // Add Back to Top button to body
-    const backToTop = document.createElement('back-to-top');
-    document.body.appendChild(backToTop);
+  initMobileNav();
 });
-
-console.log(`theme.js loaded.`);

@@ -1,22 +1,41 @@
-/* Tailwind setup */
+/* Theme stylesheet entry point.
+ *
+ * Ported from the original theme's Sass pipeline (gulp + node-sass + Susy +
+ * autoprefixer + cssnano). The stylesheets below are the previously-shipped,
+ * compiled `dist/styles/main.css` decomposed into the framework's layered
+ * structure; rule order is preserved within each file so the cascade matches
+ * the original build exactly.
+ *
+ * Build: `npx @tailwindcss/cli -i ./styles/theme.css -o ./static/dist/theme.css --optimize`
+ */
 
-@import "tailwindcss";
+/* Icon font (fontello + Gilroy) */
+@import "./fonts/fontello.css";
 
-/* Base styles */
-@import "./base/index.css";
-@import "./navigation/index.css";
+/* Base / global */
+@import "./common/global.css";
 
-/* Lineicons icon font */
-@import "./fonts/lineicons.css";
-
-/* Import *-break-out utilities (replicating the non-functional "tailwind-container-break-out" plugin) */
-@import "./base/break-out.css";
+/* Navigation */
+@import "./navigation/nav-main.css";
+@import "./navigation/nav-mobile.css";
+@import "./navigation/nav-functional.css";
 
 /* Components */
-@import "./components/index.css";
+@import "./components/grid.css";
+@import "./components/buttons.css";
+@import "./components/forms.css";
+@import "./components/comments.css";
+@import "./components/table.css";
+@import "./components/popup.css";
+@import "./components/wp-classes.css";
 
-/* Blocks */
-@import "./blocks/index.css";
-
-/* Import Tailwind typography plugin */
-@plugin "@tailwindcss/typography";
+/* Layouts */
+@import "./layouts/header.css";
+@import "./layouts/footer.css";
+@import "./layouts/sidebar.css";
+@import "./layouts/pages.css";
+@import "./layouts/posts.css";
+@import "./layouts/home.css";
+@import "./layouts/speakers.css";
+@import "./layouts/sponsors.css";
+@import "./layouts/tinymce.css";

@@ -28,11 +28,21 @@ class ACF {
 	 *
 	 * This constructor initializes the class by setting the file path and
 	 * adding filters for loading and saving JSON files related to ACF.
+	 *
+	 * The CropConnect field groups live in the database (they predate this
+	 * theme and are shared with the legacy theme), so JSON sync is only wired
+	 * up when an `acf/` directory is actually present. Pointing ACF at a
+	 * non-existent directory would let the theme's (absent) JSON shadow the
+	 * real field groups on the next admin save.
 	 */
 	public function __construct() {
 		$this->path = get_stylesheet_directory() . '/acf';
-		add_filter( 'acf/settings/load_json', array( $this, 'loadJson' ) );
-		add_filter( 'acf/settings/save_json', array( $this, 'saveJson' ) );
+
+		if ( is_dir( $this->path ) ) {
+			add_filter( 'acf/settings/load_json', array( $this, 'loadJson' ) );
+			add_filter( 'acf/settings/save_json', array( $this, 'saveJson' ) );
+		}
+
 		add_filter( 'acf/blocks/default_block_version', array( $this, 'blocksV3' ), 10, 2 );
 	}
 

@@ -1,7 +1,9 @@
 /*
- * Theme Name: CropConnect 2026
- * Description: Custom WordPress theme for CropConnect (new starter)
- * Version: 5.0
- * Author: Vincent Design Inc.
- * Text Domain: basicwp
- */
+Theme Name: CropConnect 2026
+Description: CropConnect Conference theme, rebuilt on the VDI Starter v5 framework. Rendering, styling and behaviour are carried over unchanged from the previous Roots/Sage-based "cropconnect-new" theme.
+Version: 6.0
+Author: Vincent Design Inc.
+Text Domain: basicwp
+Requires at least: 6.5
+Requires PHP: 8.0
+*/
