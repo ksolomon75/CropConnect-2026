@@ -1,0 +1,256 @@
+{
+    "key": "group_60106ed700da3",
+    "title": "Grid Cell",
+    "fields": [
+        {
+            "key": "field_60106ed7117ef",
+            "label": "Col Span",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 1,
+            "multi_expand": 1,
+            "endpoint": 0
+        },
+        {
+            "key": "field_60106ed7117f7",
+            "label": "Default",
+            "name": "col_span",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "hide-top-label",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 1,
+            "max": 12,
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_60106ed711802",
+            "label": "(sm)",
+            "name": "col_span_sm",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60106ed711830",
+                        "operator": "==",
+                        "value": "sm"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 1,
+            "max": 12,
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_60106ed71180a",
+            "label": "(md)",
+            "name": "col_span_md",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60106ed711830",
+                        "operator": "==",
+                        "value": "md"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 1,
+            "max": 12,
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_60106ed711811",
+            "label": "(lg)",
+            "name": "col_span_lg",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60106ed711830",
+                        "operator": "==",
+                        "value": "lg"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 1,
+            "max": 12,
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_60106ed71181d",
+            "label": "(xl)",
+            "name": "col_span_xl",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60106ed711830",
+                        "operator": "==",
+                        "value": "xl"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 1,
+            "max": 12,
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_60106ed711825",
+            "label": "(2xl)",
+            "name": "col_span_2xl",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60106ed711830",
+                        "operator": "==",
+                        "value": "2xl"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 1,
+            "max": 12,
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_60106ed711830",
+            "label": "Breakpoints",
+            "name": "col_span_breakpoints",
+            "aria-label": "",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "sm": "sm (640px)",
+                "md": "md (768px)",
+                "lg": "lg (1024px)",
+                "xl": "xl (1280px)",
+                "2xl": "2xl (1536px)"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0,
+            "custom_choice_button_text": "Add new choice"
+        },
+        {
+            "key": "field_60106ed711838",
+            "label": "Col Span End",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/grid-cell"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1697125043
+}

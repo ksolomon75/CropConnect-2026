@@ -1,0 +1,362 @@
+{
+    "key": "group_600f5a9e242c3",
+    "title": "Grid",
+    "fields": [
+        {
+            "key": "field_6010666abf912",
+            "label": "Grid Settings",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 1,
+            "multi_expand": 1,
+            "endpoint": 0
+        },
+        {
+            "key": "field_600f6ea6251d4",
+            "label": "Columns",
+            "name": "columns",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 1,
+            "max": 12,
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_600f6ee1251d6",
+            "label": "Columns (sm)",
+            "name": "columns_sm",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60106fa83e9ae",
+                        "operator": "==",
+                        "value": "sm"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 1,
+            "max": 12,
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_600f6f41251d7",
+            "label": "Columns (md)",
+            "name": "columns_md",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60106fa83e9ae",
+                        "operator": "==",
+                        "value": "md"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 1,
+            "max": 12,
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_600f6f4d251d8",
+            "label": "Columns (lg)",
+            "name": "columns_lg",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60106fa83e9ae",
+                        "operator": "==",
+                        "value": "lg"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 1,
+            "max": 12,
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_600f6f57251d9",
+            "label": "Columns (xl)",
+            "name": "columns_xl",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60106fa83e9ae",
+                        "operator": "==",
+                        "value": "xl"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 1,
+            "max": 12,
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_600f6f66251da",
+            "label": "Columns (2xl)",
+            "name": "columns_2xl",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60106fa83e9ae",
+                        "operator": "==",
+                        "value": "2xl"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 1,
+            "max": 12,
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_60106fa83e9ae",
+            "label": "Breakpoints",
+            "name": "columns_breakpoints",
+            "aria-label": "",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "sm": "sm (640px)",
+                "md": "md (768px)",
+                "lg": "lg (1024px)",
+                "xl": "xl (1280px)",
+                "2xl": "2xl (1536px)"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0,
+            "custom_choice_button_text": "Add new choice"
+        },
+        {
+            "key": "field_600f5d3ec8e30",
+            "label": "Gap X",
+            "name": "gap_x",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "0": "0",
+                "1": "1",
+                "2": "2",
+                "3": "3",
+                "4": "4",
+                "5": "5",
+                "6": "6",
+                "7": "7",
+                "8": "8",
+                "9": "9",
+                "10": "10",
+                "11": "11",
+                "12": "12",
+                "14": "14",
+                "16": "16",
+                "18": "18",
+                "20": "20",
+                "24": "24",
+                "28": "28",
+                "32": "32",
+                "36": "36",
+                "40": "40",
+                "48": "48",
+                "56": "56",
+                "64": "64",
+                "72": "72",
+                "80": "80",
+                "88": "88",
+                "96": "96"
+            },
+            "default_value": 0,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_60dca39d232a1",
+            "label": "Gap Y",
+            "name": "gap_y",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "0": "0",
+                "1": "1",
+                "2": "2",
+                "3": "3",
+                "4": "4",
+                "5": "5",
+                "6": "6",
+                "7": "7",
+                "8": "8",
+                "9": "9",
+                "10": "10",
+                "11": "11",
+                "12": "12",
+                "14": "14",
+                "16": "16",
+                "18": "18",
+                "20": "20",
+                "24": "24",
+                "28": "28",
+                "32": "32",
+                "36": "36",
+                "40": "40",
+                "48": "48",
+                "56": "56",
+                "64": "64",
+                "72": "72",
+                "80": "80",
+                "88": "88",
+                "96": "96"
+            },
+            "default_value": 0,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_60106e64bf91c",
+            "label": "Grid Settings End",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/grid"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1744581665
+}

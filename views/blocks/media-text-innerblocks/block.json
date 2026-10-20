@@ -1,0 +1,31 @@
+{
+  "name": "acf/media-text-innerblocks",
+  "title": "Media with Text Block - InnerBlocks Variant",
+  "description": "2 column content with image and optional calls-to-action",
+  "style": [
+    "file:./media-text-innerblocks.css"
+  ],
+  "category": "vdi-blocks",
+  "icon": "screenoptions",
+  "keywords": [
+    "media",
+    "media-text",
+    "image",
+    "video",
+    "text",
+    "columns"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "media-text-innerblocks.php"
+  },
+  "supports": {
+    "align": true,
+    "anchor": true,
+    "color": true,
+    "html": true,
+    "jsx": true,
+    "mode": true,
+    "multiple": true
+  }
+}

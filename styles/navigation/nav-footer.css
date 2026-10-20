@@ -1,0 +1,102 @@
+/**
+ * VDI Navs & Menu - Footer Navigation
+ *
+ * Please review documentation upon first use, and, as-needed:
+ * ___Link_Here___
+ */
+
+/* desktop */
+@media screen and (min-width: 62.5rem) {
+  .nav-footer .menu-vdi {
+    @apply flex flex-col items-start justify-start p-0 m-0;
+
+    >li {
+      >a {
+        /* text */
+        @apply font-normal leading-snug text-secondary text-18px;
+        /* spacing & display */
+        @apply mx-0 p-0 no-underline;
+      }
+    }
+  }
+}
+
+/* mobile */
+@media screen and (max-width: 62.5rem) {
+  .nav-footer {
+    .nav-footer__toggle {
+      /* display */
+      @apply text-primary p-3;
+    }
+
+    .menu-vdi {
+      @apply flex-col w-[95%] py-6;
+
+      .menu-vdi__submenu {
+        @apply py-2 px-7 flex-col;
+      }
+
+      .menu-vdi__item {
+        a,
+        button {
+          /* text */
+          @apply font-normal leading-snug text-lg;
+          /* spacing & display */
+          @apply block w-full p-4;
+          /* interaction */
+          @apply focus-visible:bg-secondary-200 hover:bg-secondary-200;
+        }
+
+        a {
+          @apply block w-full;
+        }
+
+        button {
+          @apply flex w-full justify-between;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 62.5rem) {
+  .nav-footer .menu-vdi {
+    .menu-vdi__toggle {
+      @apply font-semibold underline text-20px mt-3 pb-1;
+
+      >svg {
+        @apply hidden;
+      }
+    }
+
+    .menu-vdi__item--parent {
+      @apply static;
+    }
+
+    .menu-vdi__submenu {
+      @apply static block m-0 mb-3 p-0 pl-2 shadow-none;
+
+      >li {
+        @apply w-full m-0 p-0;
+      }
+
+      .menu-vdi__item {
+        /* text */
+        @apply font-normal leading-snug text-18px;
+        /* spacing & display */
+        @apply block w-full;
+        /* interaction */
+        @apply focus-visible:bg-secondary-200 hover:bg-secondary-200;
+
+        a {
+          @apply block w-full;
+        }
+      }
+
+      a.menu-vdi__item,
+      .menu-vdi__item a {
+        @apply p-0 text-secondary;
+      }
+    }
+  }
+}

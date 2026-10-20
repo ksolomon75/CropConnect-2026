@@ -1,0 +1,129 @@
+/**
+ * VDI Navs & Menu - Main Navigation + Mega Menu Styles
+ *
+ * Please review documentation upon first use, and, as-needed:
+ * https://docs.vincentdevelopment.ca/docs/starter-v3-enhancements/navigation/
+ */
+
+/* all sizes */
+.nav-main .menu-vdi {
+  .menu-vdi__toggle {
+    @apply flex items-center gap-2;
+  }
+}
+
+/* mobile */
+@media screen and (max-width: 62.5rem) {
+  .nav-main {
+    .nav-main__toggle {
+      /* display */
+      @apply text-white p-3;
+    }
+
+    .menu-vdi {
+      @apply flex-col bg-white w-[95%] right-0 z-10 py-6;
+      top: var(--hgtHeader);
+      min-height: calc(100vh - var(--hgtHeader));
+
+      .menu-vdi__submenu {
+        @apply py-2 px-7 flex-col;
+      }
+
+      .menu-vdi__item {
+        a,
+        button {
+          /* text */
+          @apply font-bold text-20px text-black hover:text-light no-underline leading-snug cursor-pointer;
+          /* spacing & display */
+          @apply block w-full p-4;
+          /* interaction */
+          @apply focus-visible:bg-secondary-200 hover:bg-secondary-200;
+        }
+
+        a {
+          @apply block w-full;
+        }
+
+        button {
+          @apply flex w-full justify-between;
+        }
+      }
+    }
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 62.5rem) {
+  .nav-main .menu-vdi {
+    @apply flex items-center justify-end p-0 m-0;
+
+    >li {
+      >a,
+      >.menu-vdi__toggle {
+        /* text */
+        @apply font-bold text-20px text-black hover:text-light no-underline leading-snug;
+        /* spacing & display */
+        @apply w-max mx-4 p-0 no-underline;
+      }
+    }
+
+    .menu-vdi__toggle {
+      @apply flex items-center gap-2;
+    }
+
+    .menu-vdi__item--parent {
+      @apply relative;
+
+      /* Mega Menu */
+      &:has(.menu-vdi__item--grandchild) {
+        @apply static;
+      }
+    }
+
+    .menu-vdi__submenu {
+      @apply bg-white shadow-lg left-4 w-64 flex-col;
+
+      top: calc(100% + 1rem);
+
+      >li {
+        @apply w-full;
+      }
+
+      .menu-vdi__item {
+        /* text */
+        @apply font-bold text-18px text-black hover:text-light no-underline leading-snug;
+        /* spacing & display */
+        @apply block w-full;
+        /* interaction */
+        @apply focus-visible:bg-secondary-200 hover:bg-secondary-200;
+
+        a {
+          @apply block w-max;
+        }
+      }
+
+      a.menu-vdi__item,
+      .menu-vdi__item a {
+        @apply p-4;
+      }
+
+      /* Mega Menu */
+      &:has(.menu-vdi__item--grandchild) {
+        @apply flex-row gap-x-8 right-0 ml-auto mr-0 p-4 w-max;
+
+        span {
+          @apply font-bold text-xl underline w-max;
+        }
+
+        a.menu-vdi__item,
+        .menu-vdi__item a {
+          @apply p-0;
+        }
+
+        .menu-vdi__megaCol {
+          @apply px-0 w-max;
+        }
+      }
+    }
+  }
+}

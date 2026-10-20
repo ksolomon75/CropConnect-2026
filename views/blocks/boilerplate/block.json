@@ -1,0 +1,26 @@
+{
+    "name": "acf/boilerplate",
+    "title": "Block Boilerplate",
+    "description": "Boilerplate code to create ACF blocks.",
+    "style": [
+        "file:./boilerplate.css"
+    ],
+    "category": "vdi-blocks",
+    "icon": "block-default",
+    "keywords": [
+        "boilerplate"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "boilerplate.php"
+    },
+    "supports": {
+        "align": true,
+        "anchor": true,
+        "color": true,
+        "html": false,
+        "jsx": false,
+        "mode": true,
+        "multiple": false
+    }
+}

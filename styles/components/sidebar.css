@@ -1,0 +1,28 @@
+/* Sidebar styles */
+
+.sidebar{
+  .widget {
+    /* Widget styles */
+    @apply mb-8;
+
+    h3 {
+      /* Widget title styles */
+      @apply m-0 mb-2 font-semibold;
+    }
+
+    ul {
+      /* List styles */
+      @apply list-none m-0 p-0 pl-3 border-l-3 border-secondary-400;
+
+      li {
+        /* List item styles */
+        @apply text-balance;
+
+        &:first-of-type {
+          /* First list item styles */
+          @apply leading-none mb-1;
+        }
+      }
+    }
+  }
+}

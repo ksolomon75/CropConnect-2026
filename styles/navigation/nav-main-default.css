@@ -1,0 +1,67 @@
+/**
+ * VDI Navs & Menu - Main Navigation + Default Dropdown Menu Styles (Desktop Only)
+ *
+ * This file contains only desktop navigation styles.
+ * For mobile navigation, choose one of:
+ * - nav-mobile-accordion.css (traditional dropdown/accordion style)
+ * - nav-mobile-sliding.css (sliding viewport style)
+ *
+ * Please review documentation upon first use, and, as-needed:
+ * TODO: Add documenation link here
+ */
+
+/* desktop */
+@media screen and (min-width: 62.5rem) {
+  .nav-main .menu-vdi {
+    @apply flex items-center justify-end p-0 m-0;
+
+    >li {
+      >a,
+      >.menu-vdi__toggle {
+        /* text*/
+        @apply font-bold text-20px text-black hover:text-light no-underline leading-snug cursor-pointer;
+        /* spacing & display */
+        @apply mx-4 p-0 no-underline;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 62.5rem) {
+  .menu-vdi {
+    .menu-vdi__toggle {
+      @apply flex items-center gap-2;
+    }
+
+    .menu-vdi__item--parent {
+      @apply relative;
+    }
+
+    .menu-vdi__submenu {
+      @apply bg-white shadow-lg left-4 w-64 flex-col;
+      top: calc(100% + 1rem);
+
+      >li {
+        @apply w-full;
+      }
+
+      .menu-vdi__item {
+        /* text */
+        @apply font-bold text-18px text-black hover:text-light no-underline leading-snug;
+        /* spacing & display */
+        @apply block w-full;
+        /* interaction */
+        @apply focus-visible:bg-secondary-200 hover:bg-secondary-200;
+
+        a {
+          @apply block w-full;
+        }
+      }
+
+      a.menu-vdi__item,
+      .menu-vdi__item a {
+        @apply p-4;
+      }
+    }
+  }
+}

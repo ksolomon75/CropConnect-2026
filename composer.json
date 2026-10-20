@@ -1,0 +1,32 @@
+{
+    "name": "vincentdesigninc/basic-wp",
+    "description": "Minimal custom WordPress theme with modern templating, a lightning fast build process, and no tom foolery.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Keith Solomon",
+            "email": "keith@vincentdesign.ca"
+        }
+    ],
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.12",
+        "wp-coding-standards/wpcs": "^3.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "scripts": {
+        "lint": [
+            "phpcs --report-full=./phpcs-results.txt ."
+        ],
+        "fix": [
+            "phpcbf --standard=.phpcs.xml ."
+        ],
+        "phpcs-config": [
+            "phpcs --config-show"
+        ]
+    }
+}

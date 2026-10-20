@@ -1,0 +1,27 @@
+{
+  "name": "acf/section",
+  "title": "Section",
+  "description": "Content section",
+  "style": [
+    "file:./section.css"
+  ],
+  "category": "vdi-blocks",
+  "icon": "align-wide",
+  "keywords": [
+    "setion",
+    "content"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "section.php"
+  },
+  "supports": {
+    "align": true,
+    "anchor": true,
+    "color": true,
+    "html": true,
+    "jsx": true,
+    "mode": true,
+    "multiple": true
+  }
+}

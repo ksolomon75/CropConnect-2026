@@ -1,0 +1,22 @@
+/* Tailwind setup */
+
+@import "tailwindcss";
+
+/* Base styles */
+@import "./base/index.css";
+@import "./navigation/index.css";
+
+/* Lineicons icon font */
+@import "./fonts/lineicons.css";
+
+/* Import *-break-out utilities (replicating the non-functional "tailwind-container-break-out" plugin) */
+@import "./base/break-out.css";
+
+/* Components */
+@import "./components/index.css";
+
+/* Blocks */
+@import "./blocks/index.css";
+
+/* Import Tailwind typography plugin */
+@plugin "@tailwindcss/typography";

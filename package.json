@@ -1,0 +1,42 @@
+{
+  "name": "vdi-starter-v5",
+  "version": "5.0",
+  "description": "VDI-Starter-v5 is a minimal WordPress theme designed as a starting point for custom theme development. It focuses on modern development approaches with a lean architecture that avoids the overhead of theme frameworks.",
+  "scripts": {
+    "start": "npm run watch",
+    "watch": "node bin/.watch.js",
+    "build": "npx @tailwindcss/cli -i ./styles/theme.css -o ./static/dist/theme.css --optimize"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vincent-Design-Inc/VDI-Starter-v5.git"
+  },
+  "keywords": [
+    "wordpress",
+    "minimal",
+    "basic",
+    "custom",
+    "theme"
+  ],
+  "author": "Keith Solomon <keith@vincentdesign.ca>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Vincent-Design-Inc/VDI-Starter-v5/issues"
+  },
+  "homepage": "https://github.com/Vincent-Design-Inc/VDI-Starter-v5#readme",
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.1",
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.15.2",
+    "browser-sync": "^3.0.3",
+    "dotenv": "^16.4.7"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.13",
+    "@tailwindcss/typography": "^0.5.16",
+    "glob": "^10.3.10",
+    "lodash": "^4.17.21",
+    "lodash.debounce": "^4.0.8",
+    "tailwindcss": "^4.0.13"
+  }
+}

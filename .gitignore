@@ -1,0 +1,19 @@
+*~
+.DS_Store
+vendor
+node_modules
+static/dist/
+.env
+bak/
+notes/
+testimonials.class.php
+resource-filter/
+phpcs-results.txt
+.claude/
+.superpowers/
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

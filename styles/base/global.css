@@ -1,0 +1,85 @@
+/* Miscellaneous custom styles */
+@theme {
+  --spacing-menu-top:     calc(100% + .9375rem);
+  --spacing-section:      2rem;
+
+  --shadow-menu-shadow:   0 .25rem .375rem rgba(0,0,0,0.1);
+
+  /** Breakpoints
+   * The breakpoints are set to match the default Tailwind breakpoints.
+   * You can override them here if you want to use different breakpoints.
+   *
+   * @see https://tailwindcss.com/docs/breakpoints
+   */
+  --breakpoint-*:   initial;
+  --breakpoint-xxs: 22.5rem;    /* 360px */
+  --breakpoint-xs:  29.6875rem; /* 475px */
+  --breakpoint-sm:  40rem;      /* 640px */
+  --breakpoint-md:  48rem;      /* 768px */
+  --breakpoint-lg:  64rem;      /* 1024px */
+  --breakpoint-xl:  70rem;      /* 1280px */
+  --breakpoint-2xl: 96rem;      /* 1536px */
+}
+
+/* Basic layout styles */
+main#maincontent {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0 0 4rem;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  padding-inline: clamp(1.5rem, 5vw, 3rem);
+}
+
+.section {
+  @apply relative my-section px-section;
+
+  &:first-child {
+    @apply mt-0;
+  }
+
+  &:last-child, p:last-child {
+    @apply mb-0;
+  }
+
+  &.has-background {
+    @apply py-section bg-cover bg-no-repeat;
+  }
+}
+
+/** Allows containers inside containers
+  *
+  * .container .wp-block-section {
+  * @apply mx-break-out;
+  * }
+  */
+
+.content-wrapper {
+  .alignfull {
+    @apply max-w-full;
+  }
+
+  .alignwide {
+    @apply max-w-full;
+  }
+
+  .alignleft {
+    @apply ml-0 mr-auto float-none;
+  }
+
+  .alignright {
+    @apply ml-auto mr-0 float-none;
+  }
+
+  .aligncenter {
+    @apply mx-auto;
+  }
+}
+
+/* Responsive embeds */
+.embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.embed iframe, .embed object, .embed embed, .embed video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }

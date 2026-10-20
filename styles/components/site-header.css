@@ -1,0 +1,22 @@
+/* Header styles */
+
+.site-header {
+	/* Site header styles */
+	.nav-aux__container {
+		a {
+			/* Link styles */
+			color: var(--color-primary-600);
+			text-decoration: none;
+			font-weight: 500;
+			transition: color 0.3s ease;
+
+			&:hover {
+				color: var(--color-primary-800);
+			}
+		}
+
+		#globalSearch {
+			@apply text-14px text-light;
+		}
+	}
+}

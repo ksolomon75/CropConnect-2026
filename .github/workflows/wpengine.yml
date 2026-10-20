@@ -1,0 +1,44 @@
+name: Deploy to WPEngine
+on:
+  workflow_dispatch
+  # Remove "workflow_dispatch" above and uncomment the lines below to enable deploy on push
+  # only do this once you're actually ready to start deploying to Flywheel
+  # push:
+  #   branches:
+  #     - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: ${{ !contains(github.event.head_commit.message, '#skipGA') }}
+
+    steps:
+    - uses: actions/checkout@v7
+
+    - name: Cache node modules
+      id: cache-npm
+      uses: actions/setup-node@v6
+      env:
+        cache-name: cache-node-modules
+      with:
+        node-version: "22"
+
+    - name: Install npm dependencies
+      run: npm install
+
+    - name: Run build task
+      # Use the project's build script (not `npm run build`) so that
+      # third-party vendor assets (e.g. Slick carousel) get copied from
+      # node_modules into static/vendor/ alongside the Tailwind output.
+      run: node bin/.build.js
+
+    - name: Clean up node modules (not needed to deploy)
+      run: rm -rf node_modules
+
+    - name: Deploy to WPE
+      uses: wpengine/github-action-wpe-site-deploy@v3
+      with:
+        WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
+        WPE_ENV: WPE_ENV # Update with WPE Environment name
+        FLAGS: '-azvr --inplace --delete --exclude=".*"'
+        REMOTE_PATH: "wp-content/themes/theme" # Update with the correct theme directory name

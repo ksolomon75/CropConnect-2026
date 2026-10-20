@@ -1,0 +1,67 @@
+/* Forms */
+
+/* Base styles */
+input[type="text"], input[type="email"], input[type="tel"],
+input[type="url"], input[type="number"], input[type="password"],
+input[type="date"], select, textarea {
+    @apply px-4 py-2 w-full rounded border-2 border-primary;
+    @apply text-black bg-white;
+    @apply focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-primary;
+
+    font-size: inherit;
+    line-height: inherit;
+}
+
+/* Gravity Forms styles */
+.gform_wrapper {
+    @apply max-w-full mx-auto;
+
+    .gform_fields { @apply text-black; }
+
+    fieldset.gfield { @apply mb-6; }
+
+    legend, label { @apply text-lg font-bold mb-2; }
+
+    label.gform-field-label--type-sub{ @apply font-normal text-base; }
+
+    .gfield_required { @apply text-danger text-xs font-bold ml-1; }
+
+    .dark {
+        input[type="text"], input[type="email"], input[type="tel"],
+        input[type="url"], input[type="number"], input[type="password"],
+        input[type="date"], select, textarea {
+            @apply text-black bg-white;
+            @apply focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-primary;
+        }
+    }
+
+    .ginput_complex {
+        @apply sm:flex;
+
+        span {
+            @apply block grow;
+
+            &:not(:first-child) { @apply mt-6 sm:mt-0 sm:ml-4; }
+        }
+    }
+
+    .gform_footer { @apply mt-8; }
+
+    h2.gform_submission_error { @apply text-xl text-danger font-bold my-4; }
+
+    .validation_message { @apply italic text-danger; }
+
+    .hidden_label > label { @apply hidden; }
+}
+
+/* Search block styles */
+.wp-block-search__input {
+    @apply px-4 py-2 w-full rounded border-2 border-transparent focus-visible:bg-secondary-300 focus-visible:border-primary;
+
+    appearance: none;
+    flex-grow: 1;
+    margin-left: 0;
+    margin-right: 0;
+    min-width: 3rem;
+    text-decoration: unset !important;
+}

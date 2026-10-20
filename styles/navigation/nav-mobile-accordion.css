@@ -1,0 +1,52 @@
+/**
+ * VDI Navs & Menu - Mobile Accordion Navigation
+ *
+ * Traditional mobile accordion/dropdown style navigation
+ * Include this file for accordion-style mobile navigation
+ */
+
+/* Mobile accordion navigation */
+@media screen and (max-width: 62.5rem) {
+  .nav-main {
+    .nav-main__toggle {
+      /* display */
+      @apply text-white p-3;
+    }
+
+    .menu-vdi {
+      @apply flex-col bg-white w-[95%] right-0 z-10 py-6;
+      @apply absolute hidden; /* Hidden by default */
+      top: var(--hgtHeader);
+      min-height: calc(100vh - var(--hgtHeader));
+
+      .menu-vdi__submenu {
+        @apply py-2 px-7 flex-col;
+      }
+
+      .menu-vdi__item {
+        a,
+        button {
+          /* text */
+          @apply font-bold text-20px text-black hover:text-light no-underline leading-snug;
+          /* spacing & display */
+          @apply block w-full p-4;
+          /* interaction */
+          @apply focus-visible:bg-secondary-200 hover:bg-secondary-200;
+        }
+
+        a {
+          @apply block w-full;
+        }
+
+        button {
+          @apply flex w-full justify-between;
+        }
+      }
+    }
+
+    /* Show menu when toggle button is expanded */
+    .nav-main__toggle[aria-expanded="true"] ~ .menu-vdi:not(.menu-vdi--sliding) {
+      @apply !flex; /* Use !important to override hidden */
+    }
+  }
+}

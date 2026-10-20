@@ -1,0 +1,35 @@
+/* Post index pagination styles */
+
+.pagination {
+  .nav-links {
+    @apply hidden md:flex items-center justify-center mt-12;
+
+    .page-numbers {
+      @apply hidden md:flex items-center justify-center h-10 p-4 text-base font-medium transition duration-300 rounded stroke-primary text-primary hover:bg-info hover:text-light hover:stroke-info focus-visible:bg-info focus-visible:text-light focus-visible:stroke-info focus-visible:outline-none;
+    }
+
+    .page-numbers.current {
+      @apply text-light whitespace-nowrap bg-info ring-offset-2 hover:bg-primary hover:stroke-primary focus-visible:bg-info;
+    }
+
+    .prev, .next {
+      @apply flex gap-4;
+    }
+  }
+
+  & a, & span {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #3857BC !important;
+    margin: 0 5px;
+    padding: .25rem .5rem;
+    text-decoration: none;
+  }
+
+  & .current, & a:hover {
+    background: #3857BC !important;
+    border-color: #3857BC !important;
+    color: #fff !important;
+    padding: .25rem .5rem;
+  }
+}

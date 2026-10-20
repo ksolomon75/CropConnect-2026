@@ -1,0 +1,27 @@
+{
+    "name": "acf/contact-info",
+    "title": "Contact Info Block",
+    "description": "Show contact information with icons and optional form.",
+    "style": [
+        "file:./contact-info.css"
+    ],
+    "category": "vdi-blocks",
+    "icon": "feedback",
+    "keywords": [
+        "contact info",
+        "contact form"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "contact-info.php"
+    },
+    "supports": {
+        "align": true,
+        "anchor": true,
+        "color": false,
+        "html": false,
+        "jsx": true,
+        "mode": true,
+        "multiple": false
+    }
+}

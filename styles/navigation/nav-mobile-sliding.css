@@ -1,0 +1,130 @@
+/**
+ * VDI Navs & Menu - Mobile Sliding Viewport Navigation
+ *
+ * Sliding viewport style for mobile navigation where
+ * users can navigate through menu levels by sliding between views
+ * Include this file for sliding-style mobile navigation
+ */
+
+/* Mobile sliding viewport navigation */
+@media screen and (max-width: 62.5rem) {
+  .nav-main {
+    .nav-main__toggle {
+      /* display */
+      @apply text-white p-3;
+    }
+
+    .menu-vdi--sliding {
+      @apply relative overflow-hidden bg-white w-[95%] right-0 z-10 py-6;
+      @apply absolute hidden; /* Hidden by default */
+      top: var(--hgtHeader);
+      min-height: calc(100vh - var(--hgtHeader));
+      
+      /* Container for all navigation levels */
+      .menu-vdi__viewport {
+        @apply flex transition-transform duration-300 ease-in-out;
+        width: 100%;
+      }
+
+      /* Each navigation level */
+      .menu-vdi__level {
+        @apply w-full flex-shrink-0 flex-col;
+        min-width: 100%;
+      }
+
+      /* Back button for secondary levels */
+      .menu-vdi__back {
+        @apply flex items-center gap-2 p-4 border-b border-gray-200 font-bold text-black hover:bg-secondary-200 focus-visible:bg-secondary-200 cursor-pointer;
+        
+        svg {
+          @apply w-5 h-5;
+        }
+      }
+
+      /* Level indicator for context */
+      .menu-vdi__level-title {
+        @apply p-4 border-b border-gray-200 font-bold text-lg text-center bg-gray-50;
+      }
+
+      /* Navigation items in sliding mode */
+      .menu-vdi__item {
+        a,
+        button {
+          /* text */
+          @apply font-bold text-20px text-black hover:text-light no-underline leading-snug;
+          /* spacing & display */
+          @apply block w-full p-4;
+          /* interaction */
+          @apply focus-visible:bg-secondary-200 hover:bg-secondary-200;
+        }
+
+        a {
+          @apply block w-full;
+        }
+
+        button {
+          @apply flex w-full justify-between items-center;
+          
+          /* Arrow indicator for items with children */
+          svg {
+            @apply w-5 h-5;
+          }
+        }
+      }
+
+      /* Hide submenu toggles in sliding mode as they become navigation buttons */
+      .menu-vdi__toggle {
+        /* Override the accordion toggle behavior */
+        &[aria-expanded="true"] {
+          svg {
+            @apply rotate-0; /* Don't rotate arrow */
+          }
+
+          +.menu-vdi__submenu {
+            @apply hidden; /* Don't show dropdown */
+          }
+        }
+      }
+
+      /* Hide traditional submenus in sliding mode */
+      .menu-vdi__submenu {
+        @apply hidden;
+      }
+
+      /* Ensure menu items in sliding viewport have proper styling */
+      .menu-vdi__level-items {
+        @apply flex-col;
+        
+        .menu-vdi__item {
+          @apply w-full;
+          
+          a {
+            @apply p-4 block w-full no-underline;
+          }
+          
+          span {
+            @apply p-4 block w-full font-bold;
+          }
+        }
+        
+        /* Style nested items that were converted from submenus */
+        .menu-vdi__nested-items {
+          @apply block;
+          
+          .menu-vdi__item {
+            @apply w-full;
+            
+            a {
+              @apply p-4 pl-8 block w-full no-underline; /* Add indent for nested items */
+            }
+          }
+        }
+      }
+    }
+
+    /* Show sliding menu when toggle button is expanded and menu has sliding class */
+    .nav-main__toggle[aria-expanded="true"] + .menu-vdi--sliding {
+      @apply !block; /* Use !important to override hidden */
+    }
+  }
+}
